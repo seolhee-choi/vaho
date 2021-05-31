@@ -1,0 +1,33 @@
+<%@page import="site.itwill.dto.CustomerDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	CustomerDTO Customer = (CustomerDTO) session.getAttribute("loginCustomer");
+
+	String Btn = request.getParameter("Btn");
+
+	System.out.print(Btn);
+	System.out.print(Customer);
+	if (Btn.equals("shoppingbasket")) {	
+		if (Customer == null) {
+			out.println("<script type='text/javascript'>");
+			out.println("location.href='" + request.getContextPath()+ "/index.jsp?vaho=member&studio=login';");
+			out.println("</script>");
+		}else{
+		request.getRequestDispatcher("../index.jsp?vaho=cart&studio=cart_add").forward(request, response);
+		}
+	}
+	
+	else if (Btn.equals("buy")) {
+		if (Customer == null) {
+			out.println("<script type='text/javascript'>");
+			out.println("location.href='" + request.getContextPath()+ "/index.jsp?vaho=Buy&studio=non_customer_agree';");
+			out.println("</script>");
+		} else {
+			out.println("<script type='text/javascript'>");
+			out.println("location.href='" + request.getContextPath()
+					+ "/index.jsp?vaho=Buy&studio=PaymentWindow';");
+			out.println("</script>");
+		}
+	}
+%>

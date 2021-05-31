@@ -1,0 +1,105 @@
+<%@page import="site.itwill.dto.CustomerDTO"%>
+<%@page import="site.itwill.dto.CartDTO"%>
+<%@page import="site.itwill.dto.ProductDTO"%>
+<%@page import="site.itwill.dao.ProductDAO"%>
+<%@page import="site.itwill.dao.CartDAO"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="site.itwill.dao.ProductDAO"%>
+<%@page import="site.itwill.dto.ProductDTO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@include file="/security/admin_check.jspf" %>    
+<%
+	List<ProductDTO> product=new ArrayList<ProductDTO>();
+	List<CartDTO> cart=CartDAO.getDao().getemail(email.getEmail());
+	for(int i=0;i<cart.size();i++){
+		 product.add(ProductDAO.getDAO().selectNoProduct(cart.get(i).getNo()));
+	}
+%>
+
+<style type="text/css">
+#product {
+	width: 800px;
+	margin: 10px auto;
+}	
+
+#btnDiv {
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid black;
+	text-align: center;
+	width: 200px;
+}
+
+.pname { width: 400px; }
+
+td a, td a:visited {
+	text-decoration: none;
+}
+
+td a:hover {
+	text-decoration: underline;
+	color: blue;
+}
+</style>
+
+<div id="product">
+	<h2>장바구니</h2>
+	
+	<div id="btnDiv">
+		<button type="button" id="addBtn">상품 등록</button>
+	</div>
+	
+	<table>
+		<tr>
+			<td>상품 이미지</td>
+			<td class="pname">상품 명</td>
+			<td>수량</td>
+			<td>가격</td>
+		</tr>
+		
+		<% if(cart.isEmpty()) { %>
+			<tr>
+				<td colspan="4">등록된 상품이 하나도 없습니다.</td>
+			</tr>
+		<% } else { %>
+			<%for(int i=0;i<cart.size();i++) {%>
+				<tr>
+					<td >
+						<a href="<%=request.getContextPath()%>/index.jsp?vaho=Product&studio=Infomation&pNo=<%=cart.get(i).getNo() %>">
+						<img src="<%=request.getContextPath()%>/image/<%=product.get(i).getpImage() %>"></a> 
+						<%=product.get(i).getpName() %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" id="removeBtn">삭제하기</button>
+					</td>
+					<td align = "center"><%=cart.get(i).getCount() %></td>
+					<td align = "center"><%=cart.get(i).getPrice() %></td>
+					<td rowspan="3" align = "center">2500원</td>
+										<!-- .get(i).getDeliveryP()  -->
+				<%} %>
+				</tr>
+		<% } %>
+	</table>
+	<div>&nbsp;</div>
+	
+</div>
+
+<script type="text/javascript">
+$("#addBtn").click(function() {
+	location.href="<%=request.getContextPath()%>/index.jsp?vaho=admin&studio=product_insert";
+});
+
+$("#category").change(function() {
+	$("#categoryForm").submit();
+});
+
+</script>

@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@font-face {
+	font-family: "NanumMyeongjo";
+	src: url("/semi/project/fonts/NanumMyeongjo.ttf") format("ttf");  
+}
+@font-face {
+	font-family: "NotoSansKR2";
+	src: url("/semi/project/fonts/NotoSansKR2.otf") format("otf");  
+}
+@font-face {
+	font-family: "OpenSans";
+	src: url("/semi/project/fonts/OpenSans.ttf") format("ttf");  
+}
+body {
+	padding-top: 144px;
+	font-family: "OpenSans";
+}
+div {
+	margin: 10px;
+	padding: 10px;
+	
+}
+
+#header{
+	height:130px;
+	border: 1px solid white;
+	position: fixed;
+	justify-content: space-between;
+	top: 0;
+	width: 100%;
+	background: white;
+}
+
+#logo{
+	float:right;
+	padding:10px 58px 0px 0px;
+
+}
+
+ul.nav{
+	
+	list-style:none;
+	position: static;
+	margin: 25px 0px 0px -30px;
+	
+}
+ul.nav li{
+	float:left;	
+	font-size: 15px;
+	font-family: "NanumMyeongjo";
+}
+ul.nav a{
+	line-height:65px;
+	color:grey;
+	padding:0px 11px;
+	text-decoration: none;
+}
+ul.nav li a:hover, a:active {
+	color:black;
+}
+.nav ul {
+	opacity: 0;
+	margin: -10px 0px;
+	padding: 0px 0px 40px 0px;
+	position: absolute;
+	border: 0.5px solid grey;
+	list-style-type: none;
+	background: white;
+}
+.nav ul a {
+	font-size: 14px;
+	font-style: bold;
+	color:grey;
+}
+.nav li:hover ul{
+	opacity: 1;
+}
+.nav ul li {
+	float: none;
+	height: 0;
+	line-height: 0;
+}
+
+.nav li:hover ul li {
+	height: 20px;
+	line-height: 0px;
+}
+.nav li ul li {
+	transition: all 0.5s;
+}
+
+
+#footer {
+	color:grey;
+	text-decoration: none;
+	height: 100px;
+	border: 1px solid white;
+	text-align: left;
+	font-size: 10px;
+}
+#footer1 a {
+	text-decoration: none;
+	color: grey;
+	
+}
+

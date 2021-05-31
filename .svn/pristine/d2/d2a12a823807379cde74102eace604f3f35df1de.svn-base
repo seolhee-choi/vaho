@@ -1,0 +1,74 @@
+
+body{
+margin: 0 auto;
+width: 500px;
+}
+table:not(div.ProductStock){
+	margin-bottom:20%;
+}
+hr{
+	border: solid 1p #ececec;	
+}
+
+th{
+	text-align:left; 
+	padding-bottom: 5%;
+}
+td:not(.product):not(.total){
+	font-size:14px;
+	width: 1%;
+}
+input{
+	font-size:20px;
+}
+.onecol{
+	width:98%;
+	height:40px;
+	border-radius: 5px;
+	border:2px solid #ececec;
+}
+.twocol{
+	margin-right:5px;
+	width:45%;
+	border-radius: 5px;
+	height:40px;
+	border:2px solid #ececec;
+}
+.threecol{
+	width:28%;
+	border-radius: 5px;
+	height:40px;
+	border:2px solid #ececec;
+}
+#error{
+	visibility: hidden;
+	color:red;
+}
+.Price{
+	width:50%;
+	text-align:right; 
+}
+.PriceTitle{
+	width:80%;
+}
+.payInfoamtion{
+	width:100%;
+}
+.Depositor{
+	display:none;
+}
+.total{
+	font-size:20px;
+	color:blue;
+	text-align:right; 
+}
+
+.product:not(div.ProductStock){
+	font-size:16px;
+	color:#2c2c2c;
+}
+.ProductStock{
+	margin-top: -7%;
+	font-size:13px;
+	color:#b7b7b7;
+}

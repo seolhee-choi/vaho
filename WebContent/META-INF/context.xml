@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WAS 실행시 인스턴스 생성에 필요한 정보에 이름을 부여하여 제공하는 파일 -->
+<Context>
+	<!-- Resource : 인스턴스 생성에 필요한 정보를 속성과 속성값으로 제공하는 엘리먼트 -->
+	<!-- name 속성 : 자원명을 속성값 설정 - WAS 내부에 "java:comp/env/자원명"형식으로 저장 -->
+	<!-- auth 속성 : 인스턴스를 관리하기 위한 사용자명을 속성값으로 설정 -->
+	<!-- type 속성 : 자원명으로 생성되어 반환되는 인스턴스의 자료형(클래스 또는 인터페이스)을 속성값으로 설정 -->
+	<!-- factory 속성 : 인스턴스를 생성하는 Factory 클래스를 속성값으로 설정 - class 속성과 유사 -->
+	<!-- 기타 속성 : 인스턴스에 필요한 정보를 속성(필드명)과 속성값(필드값)으로 설정 -->
+	<Resource 
+		name="jdbc/oracle" 
+		auth="Container" 
+		type="javax.sql.DataSource"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@www.itwill.site:1521:xe" 
+		username="vaho" 
+		password="123123"
+		initialSize="10" 
+		maxIdle="10" 
+		maxTotal="20"/>
+</Context> 

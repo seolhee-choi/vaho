@@ -1,0 +1,20 @@
+<%@page import="java.util.List"%>
+<%@page import="site.itwill.dto.CustomerDTO"%>
+<%@page import="site.itwill.dto.CartDTO"%>
+<%@page import="site.itwill.dao.CartDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% 
+	CustomerDTO Customer = (CustomerDTO) session.getAttribute("loginCustomer");
+	
+	CartDAO.getDao().deliveryStatus(CartDTO.Delivery,Customer.getEmail());
+	List<CartDTO> carts=CartDAO.getDao().getemail(Customer.getEmail());
+	
+	System.out.print(CartDTO.Delivery);
+	System.out.print(Customer.getEmail());
+	for(CartDTO cart:carts){
+	System.out.print(cart.getNo()+": ");
+	System.out.print(cart.getDeliveryType());
+	}
+	response.sendRedirect(request.getContextPath()+"/index.jsp");
+%>

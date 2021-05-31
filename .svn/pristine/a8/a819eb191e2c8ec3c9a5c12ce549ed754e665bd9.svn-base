@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+body {
+	color: #666666;
+}
+
+div {
+	margin-bottom: 3%;
+}
+
+.BigImg {
+	width: 80%;
+	margin-left: 5%;
+	margin-top: 5%;
+	text-align: center;
+}
+
+.smallImg {
+	width: 100px;
+	height: 100px;
+}
+
+.AccessoryTitle {
+	font-size: 30px;
+	color: #313131;
+}
+
+.AccessoryExp {
+	fontsize: 6px;
+	color: #666666;
+}
+
+.Accessorypirce {
+	fontsize: 20px;
+	color: #313131;
+}
+
+.Accessorydiscountrate {
+	margin-top: 5%;
+	fontsize: 13px;
+	color: #666666;
+}
+
+.inline {
+	display: inline;
+}
+
+.select {
+	fontsize: 30px;
+	color: #666666;
+}
+
+.AccessoryImg {
+	width: 50%;
+}
+
+input:not(#BtnBuy) {
+	margin: 2%;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance:none;	
+
+	font-size: 0.7rem;
+	color: #444;
+	background-color: #fff;
+	padding: .5em;
+	margin: 0;
+	border: 1px solid #aaa;
+	border-radius: .5em;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+}
+
+.Buy{
+	width: 20%;
+	height: 80%;
+}
+#BtnBuy{
+	width: 200px;
+	height: 50px;
+}
+#error{
+	fontsize: 7px;
+}
+.Buy{
+	background-color: black;
+}

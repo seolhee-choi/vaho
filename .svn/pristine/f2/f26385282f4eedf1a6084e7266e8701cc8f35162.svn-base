@@ -1,0 +1,14 @@
+<%@page import="site.itwill.dto.CustomerDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+CustomerDTO loginCustomer= (CustomerDTO)session.getAttribute("loginCustomer");
+
+//비로그인상태의 사용자 이거나 관리자가 아닌 경우
+if(loginCustomer==null || loginCustomer.getAdmin()!=1){
+	out.println("<script type='text/javascript'>");
+	out.println("location.href='"+request.getContextPath()+"/index.jsp?vaho=error&studio=error400';");
+	out.println("</script>");
+	return;
+}
+%>

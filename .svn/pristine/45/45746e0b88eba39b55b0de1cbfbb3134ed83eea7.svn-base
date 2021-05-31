@@ -1,0 +1,81 @@
+/*헤더영역*/
+.headerMenuList {
+	position: inherit;
+	width: 100%;
+	background-color: white;
+	z-index: 2;
+}
+
+nav.headerMenu {
+	display: flex;
+	align-items: center;
+	height: 130px;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+nav.headerMenu li {
+	display: inline-block;
+	padding-right: 16px;
+}
+
+a {
+	color: #999999;
+	border-color: #999999;
+	text-decoration:none;
+}
+
+input {
+
+	color: #999999;	
+	border-color: white;
+	text-decoration:none;
+	border:none;
+}
+
+.headerRight {
+	position: fixed;
+	right: 5%;
+	top: 3%;
+}
+
+.headerLogo {
+	width: 80px;
+	height: 80px;
+}
+
+.ShopMenu {
+	display: none;
+	border: 1px solid rgb(242, 242, 242);
+	background-color: white;
+	z-index: 3;
+}
+
+a:hover {
+	color: #313131;
+}
+input:hover{
+	color: #313131;
+}
+a.shop_link:hover+.ShopMenu {
+	display: table;
+	position: fixed;
+	padding: 0%;
+}
+
+.ShopMenu:hover {
+	display: table;
+	position: fixed;
+	padding: 0%;
+}
+/*아래 기타사항 색상 사이즈*/
+footer{
+	
+	border-bottom: 0 auto;
+	font-size: 10px;
+	color: #313131;
+		
+}
+
