@@ -7,7 +7,13 @@
 <div align=center>
 
 <img src="https://user-images.githubusercontent.com/81903004/120140041-a945f200-c214-11eb-8770-7c2bd1d5bf28.png">
-  (https://user-images.githubusercontent.com/81903004/120140566-c8914f00-c215-11eb-90ad-006dbd9b0607.png
+<br>
+<br>
+<hr>
+<img src="https://user-images.githubusercontent.com/81903004/120140566-c8914f00-c215-11eb-90ad-006dbd9b0607.png">
+<br>
+<br>
+  <p><리뷰 메인></p>
 <hr>
 <br>
 <br>
